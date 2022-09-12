@@ -1,0 +1,23 @@
+<button
+  type="button"
+  class="btn btn-outline-secondary"
+  [ngbPopover]="showProfileInfo"
+  #profileInfo="ngbPopover"
+  (mouseenter)="openProfileInfo(profileInfo)"
+>
+  Fully Customized and controlled popover
+</button>
+
+<ng-template #showProfileInfo>
+  <div>
+    <h2>Time Picker</h2>
+    <div>
+      <ngb-timepicker
+        (mouseleave)="mouseLeaveClose()"
+        [(ngModel)]="time"
+      ></ngb-timepicker>
+      <hr />
+      <!-- <pre>Selected time: {{time | json}}</pre> -->
+    </div>
+  </div>
+</ng-template>
